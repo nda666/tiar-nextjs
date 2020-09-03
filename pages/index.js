@@ -10,7 +10,7 @@ function Application() {
   const user = useContext(UserContext);
 
   return (
-        user.user ? <Profile /> : <SignIn />
+        user ? <Profile /> : <SignIn />
         
 
   );
