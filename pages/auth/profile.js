@@ -5,7 +5,7 @@ import { auth } from "~/module/firebase";
 
 const Profile = () => {
   const user = useContext(UserContext);
-  const { fullName, phoneNumber, email } = user;
+  // const { fullName, phoneNumber, email } = user;
   return (
     <Row>
       <Col xs={20} sm={16} md={12} lg={8} xl={4}>
@@ -20,9 +20,9 @@ const Profile = () => {
           className="border border-blue-300"
         ></div>
         <div className="md:pl-4">
-          <h2 className="text-2xl font-semibold">{fullName}</h2>
-          <h3 className="italic">{phoneNumber}</h3>
-          <h3 className="italic">{email}</h3>
+          <h2 className="text-2xl font-semibold">{user.fullName}</h2>
+          <h3 className="italic">{user.phoneNumber}</h3>
+          <h3 className="italic">{user.email}</h3>
         </div>
         <button
           onClick={() => {
