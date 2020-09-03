@@ -1,21 +1,13 @@
 import React, { Component, createContext } from "react";
 import { auth, getUserDocument } from "~/module/firebase";
 
-export const UserContext = createContext({
-  fullName: "",
-  phoneNumber: "",
-  email: "",
-});
+export const UserContext = createContext({user: null});
 
 class UserProvider extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      user: {
-        fullName: "",
-        phoneNumber: "",
-        email: "",
-      },
+      user: null
     };
   }
 
@@ -35,7 +27,7 @@ class UserProvider extends Component {
   };
   render() {
     return (
-      <UserContext.Provider value={this.state.user}>
+      <UserContext.Provider value={{user: this.state.user }}>
         {this.props.children}
       </UserContext.Provider>
     );
