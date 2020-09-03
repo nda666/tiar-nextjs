@@ -31,7 +31,7 @@ const SignIn = () => {
 
 
   const signInWithPhone = (values) => {
-    auth.signInWithPhoneNumber
+   
   };
 
   const onChangeHandler = (event) => {
